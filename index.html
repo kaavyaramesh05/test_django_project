@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaavya R | Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --panel-bg: #151d30;
+            --accent-color: #00d2ff;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border-color: #233554;
+        }
+
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 3rem 1rem;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            letter-spacing: 0.15em;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .contact-info a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-color);
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        h2::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        .summary-text {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .skill-badge {
+            background: rgba(0, 210, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .card {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #ffffff;
+        }
+
+        .card-subtitle {
+            color: var(--accent-color);
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-top: 0.2rem;
+        }
+
+        .date {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .tech-stack {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            background: rgba(0, 210, 255, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            display: inline-block;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-top: 0.8rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .split-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 700px) {
+            .split-grid {
+                grid-template-columns: 1fr;
+            }
+            .card-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>KAAVYA R</h1>
+        <div class="subtitle">Software Engineer</div>
+        <div class="contact-info">
+            <span>📍 Bhavani, Erode, Tamil Nadu</span>
+            <span>📞 +91-9363633309</span>
+            <span>📧 <a href="mailto:kaavyait23@gmail.com">kaavyait23@gmail.com</a></span>
+        </div>
+    </header>
+
+    <section>
+        <h2>Professional Summary</h2>
+        <p class="summary-text">
+            Bachelor of Computer Technology graduate (2026) with hands-on project experience in Python and full-stack web development using Django and MySQL. Skilled in building functional, real-world applications including a role-based academic document management system with JWT authentication. Seeking an entry-level Software Engineer role to apply strong programming fundamentals, problem-solving skills, and a continuous-learning mindset to real-world software development.
+        </p>
+    </section>
+
+    <section>
+        <h2>Technical Skills</h2>
+        <div class="skills-container">
+            <div class="skill-badge">Python</div>
+            <div class="skill-badge">JavaScript</div>
+            <div class="skill-badge">Django (MVT Architecture)</div>
+            <div class="skill-badge">JWT Authentication</div>
+            <div class="skill-badge">MySQL</div>
+            <div class="skill-badge">MySQL Workbench</div>
+            <div class="skill-badge">Data Structures</div>
+            <div class="skill-badge">3D Animation</div>
+            <div class="skill-badge">Git & GitHub</div>
+            <div class="skill-badge">VS Code</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Projects</h2>
+
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <div class="card-title">Academic Document Processing System</div>
+                    <div class="tech-stack">HTML, CSS, JavaScript, Python, Django, MySQL, Git, GitHub</div>
+                </div>
+            </div>
+            <ul>
+                <li>Built a role-based web portal enabling students to digitally download mark sheets, transfer certificates, and bonafide certificates, eliminating manual paperwork and reducing administrative turnaround time.</li>
+                <li>Implemented three distinct user roles (Student, Staff, Admin) with separate access permissions and workflows using Django's MVT (Model-View-Template) architecture.</li>
+                <li>Secured user sessions and API access through JWT-based authentication, ensuring data integrity across roles.</li>
+                <li>Designed and managed the relational database schema using MySQL and MySQL Workbench; used Git/GitHub for version control.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <div class="card-title">Obstacle Avoiding Robot</div>
+                    <div class="tech-stack">Arduino, Ultrasonic Sensor, Embedded C</div>
+                </div>
+            </div>
+            <ul>
+                <li>Designed and programmed an autonomous robot using Arduino and an ultrasonic sensor to detect obstacles and navigate around them in real time.</li>
+                <li>Applied embedded systems logic and sensor-based decision-making to translate theoretical programming concepts into a functioning hardware solution.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Education</h2>
+        
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <div class="card-title">Bachelor of Computer Technology</div>
+                    <div class="card-subtitle">Vellalar College for Women, Thindal</div>
+                </div>
+                <div class="date">2023 - 2026</div>
+            </div>
+            <p class="summary-text" style="font-size: 0.95rem;"><strong>CGPA:</strong> 7.65</p>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <div class="card-title">Higher Secondary Certificate (HSC)</div>
+                    <div class="card-subtitle">Grace Matric Higher Secondary School, Bhavani</div>
+                </div>
+                <div class="date">2021 - 2022</div>
+            </div>
+            <p class="summary-text" style="font-size: 0.95rem;"><strong>Score:</strong> 76.20%</p>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <div class="card-title">Secondary School Leaving Certificate (SSLC)</div>
+                    <div class="card-subtitle">Grace Matric Higher Secondary School, Bhavani</div>
+                </div>
+                <div class="date">2019 - 2020</div>
+            </div>
+            <p class="summary-text" style="font-size: 0.95rem;"><strong>Score:</strong> 100%</p>
+        </div>
+    </section>
+
+    <div class="split-grid">
+        <section>
+            <h2>Certifications</h2>
+            <div class="card" style="padding: 1.2rem;">
+                <ul>
+                    <li>Completed an online certification course on Data Analytics with Python, organized by NPTEL.</li>
+                    <li>Completed a Web Designing course organized by Value Admin.</li>
+                    <li>Presented a paper on Network Security at Nandha Engineering College, Erode.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>General</h2>
+            <div class="card" style="padding: 1.2rem;">
+                <p style="margin-bottom: 0.5rem; font-size: 0.95rem;"><strong style="color: #fff;">Languages:</strong> Tamil (Fluent), English (Intermediate)</p>
+                <p style="font-size: 0.95rem;"><strong style="color: #fff;">Core Interests:</strong> Data Structures, Database Management, Software Engineering</p>
+            </div>
+        </section>
+    </div>
+
+</div>
+
+</body>
+</html>
