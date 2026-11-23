@@ -1,337 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaavya R | Portfolio</title>
-    <style>
-        :root {
-            --bg-color: #0b0f19;
-            --panel-bg: #151d30;
-            --accent-color: #00d2ff;
-            --text-main: #f1f5f9;
-            --text-muted: #94a3b8;
-            --border-color: #233554;
-        }
-
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding: 3rem 1rem;
-        }
-
-        .container {
-            max-width: 850px;
-            margin: 0 auto;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 3.5rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        header h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .subtitle {
-            color: var(--accent-color);
-            font-weight: 600;
-            margin-bottom: 1.2rem;
-            text-transform: uppercase;
-            font-size: 0.95rem;
-            letter-spacing: 0.15em;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .contact-info a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .contact-info a:hover {
-            color: var(--accent-color);
-        }
-
-        section {
-            margin-bottom: 3rem;
-        }
-
-        h2 {
-            font-size: 1.3rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #ffffff;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        h2::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: var(--border-color);
-        }
-
-        .summary-text {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-        }
-
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-        }
-
-        .skill-badge {
-            background: rgba(0, 210, 255, 0.05);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-size: 0.9rem;
-        }
-
-        .card {
-            background: var(--panel-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.8rem;
-            margin-bottom: 1.2rem;
-        }
-
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .card-title {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: #ffffff;
-        }
-
-        .card-subtitle {
-            color: var(--accent-color);
-            font-size: 0.95rem;
-            font-weight: 500;
-            margin-top: 0.2rem;
-        }
-
-        .date {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        .tech-stack {
-            font-size: 0.8rem;
-            color: var(--accent-color);
-            background: rgba(0, 210, 255, 0.1);
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-weight: 600;
-            margin-top: 0.5rem;
-            display: inline-block;
-        }
-
-        ul {
-            list-style-type: none;
-            margin-top: 0.8rem;
-        }
-
-        li {
-            position: relative;
-            padding-left: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        li::before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-        }
-
-        .split-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        @media (max-width: 700px) {
-            .split-grid {
-                grid-template-columns: 1fr;
-            }
-            .card-header {
-                flex-direction: column;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090711" />
+  <meta name="description" content="Kaavya R — M.Sc. Computer Science student and aspiring Software Developer. Explore skills, projects, education and contact details." />
+  <title>Kaavya R | Software Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="nav-wrap">
+    <nav class="container" aria-label="Main navigation">
+      <a class="brand" href="#home">KAAVYA<span>.</span></a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
 
-<div class="container">
-
-    <header>
-        <h1>KAAVYA R</h1>
-        <div class="subtitle">Software Engineer</div>
-        <div class="contact-info">
-            <span>📍 Bhavani, Erode, Tamil Nadu</span>
-            <span>📞 +91-9363633309</span>
-            <span>📧 <a href="mailto:kaavyait23@gmail.com">kaavyait23@gmail.com</a></span>
+  <main>
+    <header class="hero container" id="home">
+      <div class="reveal">
+        <div class="eyebrow">M.Sc. Computer Science Student · Aspiring Developer</div>
+        <h1>Hi, I'm <span class="gradient">Kaavya R</span></h1>
+        <p class="hero-copy">I’m a Computer Science student interested in building useful, user-friendly software. I enjoy working with Python, web technologies and databases, and I’m continually developing my skills through hands-on projects.</p>
+        <div class="hero-meta">
+          <span class="pill">Software Developer</span>
+          <span class="pill">Python</span>
+          <span class="pill">Web Development</span>
+          <span class="pill">SQL</span>
         </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="#projects">Explore My Work <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-secondary" href="Kaavya_R_Updated_Resume.pdf" download>Download Resume ↓</a>
+          <a class="btn btn-secondary" href="mailto:kaavyait23@gmail.com">Contact Me</a>
+        </div>
+      </div>
     </header>
 
-    <section>
-        <h2>Professional Summary</h2>
-        <p class="summary-text">
-            Bachelor of Computer Technology graduate (2026) with hands-on project experience in Python and full-stack web development using Python, Django and MySQL. Skilled in building functional, real-world applications including a role-based academic document management system with JWT authentication. Seeking an entry-level Software Engineer role to apply strong programming fundamentals, problem-solving skills, and a continuous-learning mindset to real-world software development.
-        </p>
-    </section>
-
-    <section>
-        <h2>Technical Skills</h2>
-        <div class="skills-container">
-            <div class="skill-badge">Python</div>
-            <div class="skill-badge">JavaScript</div>
-            <div class="skill-badge">Django (MVT Architecture)</div>
-            <div class="skill-badge">JWT Authentication</div>
-            <div class="skill-badge">MySQL</div>
-            <div class="skill-badge">MySQL Workbench</div>
-            <div class="skill-badge">Data Structures</div>
-            <div class="skill-badge">3D Animation</div>
-            <div class="skill-badge">Git & GitHub</div>
-            <div class="skill-badge">VS Code</div>
+    <section id="about">
+      <div class="container">
+        <div class="section-head"><div class="section-kicker">A little about me</div><h2>About Me</h2></div>
+        <div class="about-grid">
+          <div class="panel">
+            <p>I am Kaavya R, currently pursuing an M.Sc. in Computer Science at Vellalar College for Women. I have a foundation in Python, SQL, data algorithms and front-end web technologies. My academic project, the Academic Document Processing System, gave me practical experience in developing a role-based web application, working with databases and using version control. I’m looking for an opportunity to grow as a Software Developer and contribute to real-world projects.</p>
+          </div>
+          <div class="quick-facts">
+            <div class="fact"><small>Current programme</small><strong>M.Sc. Computer Science</strong></div>
+            <div class="fact"><small>Current semester</small><strong>II Semester · 2026</strong></div>
+            <div class="fact"><small>Career focus</small><strong>Software Development</strong></div>
+            <div class="fact"><small>Additional strengths</small><strong>Problem-solving · Troubleshooting</strong></div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section>
-        <h2>Projects</h2>
+    <section id="skills">
+      <div class="container">
+        <div class="section-head"><div class="section-kicker">What I work with</div><h2>Technical Skills</h2><p class="section-intro">A snapshot of the technologies and fundamentals I have studied and used.</p></div>
+        <div class="skills-grid">
+          <article class="skill-card"><h3>Programming</h3><div class="tags"><span class="tag">Python</span></div></article>
+          <article class="skill-card"><h3>Web Technologies</h3><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span></div></article>
+          <article class="skill-card"><h3>Database</h3><div class="tags"><span class="tag">SQL</span><span class="tag">MySQL</span></div></article>
+          <article class="skill-card"><h3>Computer Science Fundamentals</h3><div class="tags"><span class="tag">Data Algorithms</span><span class="tag">Data Structures</span><span class="tag">DBMS</span><span class="tag">Software Engineering</span></div></article>
+          <article class="skill-card"><h3>Frameworks & Tools</h3><div class="tags"><span class="tag">Django</span><span class="tag">MySQL Workbench</span><span class="tag">VS Code</span></div></article>
+          <article class="skill-card"><h3>Development & Support</h3><div class="tags"><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Application Troubleshooting</span><span class="tag">Issue Diagnosis</span><span class="tag">User Guidance</span></div></article>
+        </div>
+      </div>
+    </section>
 
-        <div class="card">
-            <div class="card-header">
-                <div>
-                    <div class="card-title">Academic Document Processing System</div>
-                    <div class="tech-stack">HTML, CSS, JavaScript, Python, Django, MySQL, Git, GitHub</div>
-                </div>
-            </div>
-            <ul>
-                <li>Built a role-based web portal enabling students to digitally download mark sheets, transfer certificates, and bonafide certificates, eliminating manual paperwork and reducing administrative turnaround time.</li>
-                <li>Implemented three distinct user roles (Student, Staff, Admin) with separate access permissions and workflows using Django's MVT (Model-View-Template) architecture.</li>
-                <li>Secured user sessions and API access through JWT-based authentication, ensuring data integrity across roles.</li>
-                <li>Designed and managed the relational database schema using MySQL and MySQL Workbench; used Git/GitHub for version control.</li>
+    <section id="projects">
+      <div class="container">
+        <div class="section-head"><div class="section-kicker">Selected work</div><h2>Featured Project</h2><p class="section-intro">An academic project focused on simplifying the student document request process.</p></div>
+        <article class="project-card">
+          <div class="project-top">
+            <div class="project-label">Academic Web Application</div>
+            <h3>Academic Document Processing System</h3>
+            <p>A role-based web portal designed to help students access academic documents digitally, reducing dependence on manual paperwork.</p>
+          </div>
+          <div class="project-body">
+            <h4>Project highlights</h4>
+            <ul class="feature-list">
+              <li>Enables students to digitally request and download mark sheets, transfer certificates and bonafide certificates.</li>
+              <li>Implements Student, Staff and Admin roles with separate permissions and workflows.</li>
+              <li>Uses Django's Model–View–Template (MVT) architecture to organize the application.</li>
+              <li>Includes JWT-based authentication for user sessions and API access, as implemented in the project.</li>
+              <li>Uses a relational database schema managed with MySQL and MySQL Workbench.</li>
+              <li>Uses Git and GitHub for source-code version control.</li>
             </ul>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <div>
-                    <div class="card-title">Obstacle Avoiding Robot</div>
-                    <div class="tech-stack">Arduino, Ultrasonic Sensor, Embedded C</div>
-                </div>
-            </div>
-            <ul>
-                <li>Designed and programmed an autonomous robot using Arduino and an ultrasonic sensor to detect obstacles and navigate around them in real time.</li>
-                <li>Applied embedded systems logic and sensor-based decision-making to translate theoretical programming concepts into a functioning hardware solution.</li>
+            <div class="stack-line"><strong>Technologies:</strong> HTML · CSS · JavaScript · Python · Django · MySQL · Git · GitHub</div>
+            <a class="btn btn-primary" href="https://github.com/kaavyaramesh05" target="_blank" rel="noopener noreferrer">View GitHub Profile <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="project-card" style="margin-top:18px">
+          <div class="project-top">
+            <div class="project-label">Embedded Systems · Hardware Prototype</div>
+            <h3>Obstacle Avoiding Robot</h3>
+            <p>An autonomous robot prototype designed to detect obstacles and navigate around them in real time.</p>
+          </div>
+          <div class="project-body">
+            <ul class="feature-list">
+              <li>Designed and programmed an Arduino-based robot using an ultrasonic sensor.</li>
+              <li>Applied embedded-systems logic and sensor-based decision-making to build a functional hardware prototype.</li>
             </ul>
-        </div>
+            <div class="stack-line"><strong>Technologies:</strong> Arduino · Ultrasonic Sensor · Embedded C</div>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section>
-        <h2>Education</h2>
-        
-        <div class="card">
-            <div class="card-header">
-                <div>
-                    <div class="card-title">Bachelor of Computer Technology</div>
-                    <div class="card-subtitle">Vellalar College for Women, Thindal</div>
-                </div>
-                <div class="date">2023 - 2026</div>
-            </div>
-            <p class="summary-text" style="font-size: 0.95rem;"><strong>CGPA:</strong> 7.65</p>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <div>
-                    <div class="card-title">Higher Secondary Certificate (HSC)</div>
-                    <div class="card-subtitle">Grace Matric Higher Secondary School, Bhavani</div>
-                </div>
-                <div class="date">2021 - 2022</div>
-            </div>
-            <p class="summary-text" style="font-size: 0.95rem;"><strong>Score:</strong> 76.20%</p>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <div>
-                    <div class="card-title">Secondary School Leaving Certificate (SSLC)</div>
-                    <div class="card-subtitle">Grace Matric Higher Secondary School, Bhavani</div>
-                </div>
-                <div class="date">2019 - 2020</div>
-            </div>
-            <p class="summary-text" style="font-size: 0.95rem;"><strong>Score:</strong> 100%</p>
-        </div>
+    <section id="education">
+      <div class="container">
+        <div class="section-head"><div class="section-kicker">Learning journey</div><h2>Education</h2></div>
+        <article class="education-card">
+          <div class="edu-icon" aria-hidden="true">✦</div>
+          <div>
+            <h3>M.Sc. Computer Science</h3>
+            <p>Vellalar College for Women</p>
+            <span class="edu-status">2026 · II Semester</span>
+          </div>
+        </article>
+        <article class="education-card" style="margin-top:14px">
+          <div class="edu-icon" aria-hidden="true">✦</div>
+          <div>
+            <h3>Bachelor of Computer Technology</h3>
+            <p>Vellalar College for Women · 2023–2026</p>
+            <span class="edu-status">CGPA: 6.9</span>
+          </div>
+        </article>
+        <article class="education-card" style="margin-top:14px">
+          <div class="edu-icon" aria-hidden="true">✦</div>
+          <div>
+            <h3>Higher Secondary Certificate (HSC)</h3>
+            <p>Grace Matric Higher Secondary School · 2020–2022</p>
+            <span class="edu-status">76.20%</span>
+          </div>
+        </article>
+        <article class="education-card" style="margin-top:14px">
+          <div class="edu-icon" aria-hidden="true">✦</div>
+          <div>
+            <h3>Secondary School Leaving Certificate (SSLC)</h3>
+            <p>Grace Matric Higher Secondary School · 2019–2020</p>
+            <span class="edu-status">100%</span>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <div class="split-grid">
-        <section>
-            <h2>Certifications</h2>
-            <div class="card" style="padding: 1.2rem;">
-                <ul>
-                    <li>Completed an online certification course on Data Analytics with Python, organized by NPTEL.</li>
-                    <li>Completed a Web Designing course organized by Value Admin.</li>
-                    <li>Presented a paper on Network Security at Nandha Engineering College, Erode.</li>
-                </ul>
-            </div>
-        </section>
+    <section id="certifications">
+      <div class="container">
+        <div class="section-head"><div class="section-kicker">Learning & participation</div><h2>Certifications & Activities</h2></div>
+        <div class="panel">
+          <ul class="feature-list">
+            <li>Data Analytics with Python — NPTEL</li>
+            <li>Web Designing — Value Admin</li>
+            <li>Arduino Workshop — KPR Institute of Engineering and Technology</li>
+            <li>Presented a paper on Network Security at Nandha Engineering College, Erode</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-        <section>
-            <h2>General</h2>
-            <div class="card" style="padding: 1.2rem;">
-                <p style="margin-bottom: 0.5rem; font-size: 0.95rem;"><strong style="color: #fff;">Languages:</strong> Tamil (Fluent), English (Intermediate)</p>
-                <p style="font-size: 0.95rem;"><strong style="color: #fff;">Core Interests:</strong> Data Structures, Database Management, Software Engineering</p>
-            </div>
-        </section>
-    </div>
+    <section id="contact">
+      <div class="container">
+        <div class="panel contact-panel">
+          <div class="section-kicker">Let's connect</div>
+          <h2>Have an opportunity in mind?</h2>
+          <p>I’m interested in Software Developer opportunities where I can apply my programming and problem-solving skills, learn from a team and contribute to meaningful projects.</p>
+          <div class="contact-links">
+            <a class="btn btn-primary" href="mailto:kaavyait23@gmail.com">Email Me</a>
+            <a class="btn btn-secondary" href="tel:+919363633309">Call: +91 93636 33309</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/kaavya-tech/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a class="btn btn-secondary" href="https://github.com/kaavyaramesh05" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a class="btn btn-secondary" href="Kaavya_R_Updated_Resume.pdf" download>Download Resume ↓</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-</div>
-
+  <footer><div class="container">© <span id="year"></span> Kaavya R · Built with HTML, CSS & JavaScript</div></footer>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
